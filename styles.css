@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Poppins, sans-serif;
+  line-height: 1.6;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 0 12px;
+  width: inherit;
+}
+
+nav a span {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: inline-block;
+}
+
+nav a span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+nav a:hover span::after {
+  width: 100%;
+  left: 0;
+}
+
+.maintitle {
+  color: white;
+  text-decoration: none;
+}
+.maintitle h1 {
+  font-size: 1.8rem;
+}
+
+.maintitle img,
+.maintitle h1 {
+  transition: all 200ms ease;
+}
+
+.nav .active {
+  font-weight: 600;
+}
+
+.maintitle:hover h1 {
+  letter-spacing: 0.01rem;
+}
+
+.maintitle:hover img {
+  scale: 1.1;
+}
+
+.offcanvas-body nav a {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+.menu {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .menu.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+main {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+
+/* Kezdőlap banner */
+#home {
+  position: relative;
+  background-image: url("https://via.placeholder.com/1920x600");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#home h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+
+.phone-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1rem;
+  text-align: center;
+  transition: all 200ms ease;
+  width: 100%;
+  max-width: 400px;
+  min-height: 600px;
+}
+
+.phone-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.phone-card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.phone-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.phone-card h5 {
+  transition: all 200ms ease;
+}
+
+.phone-card:hover h5 {
+  letter-spacing: 0.2rem;
+}
+
+.phone-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+.card {
+  transition: all 100ms ease-in-out;
+}
+
+.card img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card:hover {
+  scale: 1.01;
+}
