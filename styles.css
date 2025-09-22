@@ -126,13 +126,20 @@ main {
 #home {
   position: relative;
   background-image: url("https://via.placeholder.com/1920x600");
-  background-size: cover;
+  background-size: 100%; /* start at normal size */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease;
   background-position: center;
   color: white;
   text-align: center;
   padding: 100px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#home:hover {
+  background-size: 105%;
 }
 
 #home h2 {
@@ -144,7 +151,6 @@ main {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
-
 
 .phone-card {
   background-color: #fff;
