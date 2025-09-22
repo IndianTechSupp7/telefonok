@@ -36,6 +36,7 @@ nav a span {
   left: 0;
   top: 0;
   display: inline-block;
+  letter-spacing: 0.05rem;
 }
 
 nav a span::after {
@@ -77,6 +78,7 @@ nav a:hover span::after {
 
 .maintitle:hover img {
   scale: 1.1;
+  rotate: 10deg;
 }
 
 .offcanvas-body nav a {
@@ -122,33 +124,64 @@ main {
   display: block;
 }
 
+.hero-title {
+  font-size: 2rem; /* default for mobile */
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem; /* medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 3rem; /* large screens */
+  }
+}
+
+
 /* Kezdőlap banner */
 #home {
   position: relative;
-  background-image: url("https://via.placeholder.com/1920x600");
-  background-size: 100%; /* start at normal size */
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size 0.5s ease;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
+  overflow: hidden;          /* prevents image overflow */
+  height: 600px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#home:hover {
-  background-size: 105%;
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;                    /* shorthand for top:0; left:0; right:0; bottom:0 */
+  background-image: url('assets/hero.jpg'); /* make sure path is correct */
+  background-size: cover;       /* keeps image covering section */
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0; 
+}
+
+#home .content {
+  position: relative;           /* stays above pseudo-element */
+  z-index: 1;
+  color: white;
+}
+
+#home:hover::before {
+  transform: scale(1.05);        /* smooth zoom */
 }
 
 #home h2 {
-  font-size: 3rem;
+  /*font-size: 3rem;*/
   margin-bottom: 1rem;
 }
 
 #home p {
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
   margin-bottom: 2rem;
 }
 
